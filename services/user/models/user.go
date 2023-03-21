@@ -34,10 +34,7 @@ type User struct {
 	Gender              string         `json:"gender"`
 	Plan                string         `json:"plan"`
 	ProfileImage        string         `json:"profile_image"`
-	FacebookAccessToken string         `json:"facebook_access_token"`
-	FacebookUserID      string         `json:"facebook_user_id"`
-	FacebookBusinessID  string         `json:"facebook_business_id"`
-	FacebookEmail       string         `json:"facebook_email"`
+
 }
 
 type UserRegisterInfo struct {

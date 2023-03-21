@@ -214,17 +214,6 @@ func generateUpdateMap(user models.User) map[string]interface{} {
 	if !(user.Plan == "") {
 		updateMap["plan"] = user.Plan
 	}
-	if !(user.FacebookAccessToken == "") {
-		updateMap["facebook_access_token"] = user.FacebookAccessToken
-	}
-	if !(user.FacebookUserID == "") {
-		updateMap["facebook_user_id"] = user.FacebookUserID
-	}
-	if !(user.FacebookBusinessID == "") {
-		updateMap["facebook_business_id"] = user.FacebookBusinessID
-	}
-	if !(user.FacebookEmail == "") {
-		updateMap["facebook_email"] = user.FacebookEmail
-	}
+
 	return updateMap
 }

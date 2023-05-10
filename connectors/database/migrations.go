@@ -11,7 +11,7 @@ func Migrate() {
 		ConnectToDatabase()
 	}
 
-	err := Pg.AutoMigrate(&userModels.User{})
+	err := Pg.AutoMigrate(&userModels.User{}, &CryptoWallet{})
 
 	if err != nil {
 		log.Fatal(err)

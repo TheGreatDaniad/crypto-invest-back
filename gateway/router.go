@@ -39,4 +39,11 @@ func addRoutes(gw models.Gateway) {
 
 	gw.Handler.POST("/users/verification", services.UserService.VerifyUser)
 
+	//wallet paths
+	gw.Handler.GET("/wallets/0", services.WalletService.GetWalletsByCustomerID, auth(userModels.DisabledUser, false))
+	gw.Handler.GET("/wallets", services.WalletService.GetWallets, auth(userModels.AdminUser, false))
+	gw.Handler.POST("/wallets", services.WalletService.CreateWallet, auth(userModels.StandardUser, false))
+	gw.Handler.PUT("/wallets/:id", services.WalletService.UpdateWallet, auth(userModels.AdminUser, false))
+	gw.Handler.DELETE("/wallets/:id", services.WalletService.DeleteWallet, auth(userModels.StandardUser, false))
+
 }

@@ -68,7 +68,6 @@ func auth(minRank string, accessByToken bool) echo.MiddlewareFunc {
 				c.SetError(err)
 				return customErrors.UnauthorizedErrorHandler(e, []string{customErrors.Unauthorized})
 			}
-
 			c.User = u
 			if !userModels.IsHigherOrEqualRank(c.User.Rank, minRank) {
 				return customErrors.UnauthorizedErrorHandler(e, []string{customErrors.Unauthorized})
